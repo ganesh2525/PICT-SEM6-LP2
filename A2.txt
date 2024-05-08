@@ -1,0 +1,37 @@
+public class studentMarksheetGenerator2 {
+    public static void generate(String name,Integer phy,Integer chem,Integer math){
+        Integer total = phy + chem + math;
+        Decimal per = (Decimal.valueOf(total)/300)*100;
+        
+        String grade;
+        if(per>=90){
+            grade='A+';
+        }
+        else if(per>=80){
+            grade='A';
+        }
+        else if(per>=70){
+            grade='B';
+        }
+        else if(per>=60){
+            grade='C';
+        }
+        else if(per>=50){
+            grade='D';
+        }
+        else{
+            grade='F';
+        }
+        
+        System.debug('Student: '+name);
+        System.debug('Physics: '+phy);
+        System.debug('Chemistry: '+chem);
+        System.debug('Maths: '+math);
+        System.debug('Total: '+total);
+        System.debug('Percentage: '+per+'%');
+        System.debug('Grade: '+grade);
+    }
+}
+
+studentMarksheetGenerator2.generate('Ganesh',80,90,100);
+studentMarksheetGenerator2.generate('Piyush',85,95,100);

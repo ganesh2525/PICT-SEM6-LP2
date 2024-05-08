@@ -1,0 +1,15 @@
+public class GreatestNum2 {
+    public static Decimal greatest(Decimal num1,Decimal num2,Decimal num3){
+        Decimal greatest=num1;
+        if(num2>greatest){
+            greatest=num2;
+        }
+        if(num3>greatest){
+            greatest=num3;
+        }
+        return greatest;
+    }
+}
+
+Decimal gr = GreatestNum2.greatest(10,20,87);
+System.debug('Gratest: '+gr);

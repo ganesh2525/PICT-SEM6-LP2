@@ -1,0 +1,30 @@
+public class CurrencyConverter2 {
+    public static Map<String,Decimal> exchangeRates = new Map<String,Decimal> {
+        'INR_TO_USD'=> 0.012,
+        'USD_TO_INR'=> 83.50,
+        'EUR_TO_USD'=> 1.07,
+        'USD_TO_EUR'=> 0.93,
+        'INR_TO_EUR'=> 0.011,
+        'EUR_TO_INR'=> 89.76
+    };
+    
+    public static Decimal convert(String fromC,String toC,Decimal amount){
+        String key1 = fromC.toUppercase() + '_TO_' + toC.toUppercase();
+        String key2 = toC.toUppercase() + '_TO_' + fromC.toUppercase();
+        
+        if(exchangeRates.containsKey(key1)){
+            return amount*exchangeRates.get(key1);
+        }
+        else if(exchangeRates.containsKey(key2)){
+            return amount/exchangeRates.get(key2);
+        }
+        else{
+            return null;
+        }
+    }
+}
+
+Decimal c1 = CurrencyConverter2.convert('USD','INR',5);
+Decimal c2 = CurrencyConverter2.convert('INR','USD',c1);
+System.debug('USD TO INR: '+c1);
+System.debug('INR TO USD: '+c2);

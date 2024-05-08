@@ -1,0 +1,58 @@
+public class mathCalculator2 {
+
+    public static Decimal add(Decimal num1,Decimal num2){
+        return num1+num2;
+    }
+    
+    public static Decimal subtract(Decimal num1,Decimal num2){
+        return num1-num2;
+    }
+    
+    public static Decimal multiply(Decimal num1,Decimal num2){
+        return num1*num2;
+    }
+    
+    public static Decimal divide(Decimal num1,Decimal num2){
+        if(num2!=0){
+            return num1/num2;
+        }
+        else{
+            return null;
+        }
+    }
+    
+    public static Decimal squareRoot(Decimal num){
+        if(num>=0){
+            return Math.sqrt(num);
+        }
+        else{
+            return null;
+        }
+    }
+    
+    public static Decimal logarithm(Decimal num){
+        if(num>0){
+            return Math.log10(num);
+        }
+        else{
+            return null;
+        }
+    }
+}
+
+
+Decimal num1=10,num2=20;
+
+Decimal a = mathCalculator2.add(num1,num2);
+Decimal s = mathCalculator2.subtract(num1,num2);
+Decimal m = mathCalculator2.multiply(num1,num2);
+Decimal d = mathCalculator2.divide(num1,num2);
+Decimal sr = mathCalculator2.squareRoot(num1);
+Decimal l = mathCalculator2.logarithm(num1);
+
+System.debug(num1+'+'+num2+'='+a);
+System.debug(num1+'-'+num2+'='+s);
+System.debug(num1+'*'+num2+'='+m);
+System.debug(num1+'/'+num2+'='+d);
+System.debug('Square root of '+num1+'='+sr);
+System.debug('log10 of '+num1+'='+l);
