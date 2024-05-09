@@ -1,0 +1,17 @@
+<apex:page controller="GreatestAmongThreeNumbersController">
+    <apex:form >
+        <apex:pageBlock title="Find Greatest Among Three Numbers">
+            <apex:pageBlockSection >
+                <apex:inputText label="Number 1" value="{!num1}"/><br/>
+                <apex:inputText label="Number 2" value="{!num2}"/><br/>
+                <apex:inputText label="Number 3" value="{!num3}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Result" id="result">
+                <apex:outputText rendered="{!showResult}" value="The greatest number is {!greatest}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton action="{!findGreatest}" value="Find Greatest" rerender="result"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

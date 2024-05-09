@@ -1,0 +1,37 @@
+public class CurrencyConverterController {
+    public Decimal amount { get; set; }
+    public String fromCurrency { get; set; }
+    public String toCurrency { get; set; }
+    public Decimal convertedAmount { get; set; }
+    public Boolean showResult { get; set; }
+
+    // Method to populate the options for From Currency select list
+    public List<SelectOption> getFromCurrencyOptions() {
+        List<SelectOption> options = new List<SelectOption>();
+        options.add(new SelectOption('USD', 'USD'));
+        options.add(new SelectOption('EUR', 'EUR'));
+        options.add(new SelectOption('INR', 'INR'));
+        // Add more currencies as needed
+        return options;
+    }
+
+    // Method to populate the options for To Currency select list
+    public List<SelectOption> getToCurrencyOptions() {
+        List<SelectOption> options = new List<SelectOption>();
+        options.add(new SelectOption('USD', 'USD'));
+        options.add(new SelectOption('EUR', 'EUR'));
+        options.add(new SelectOption('INR', 'INR'));
+        // Add more currencies as needed
+        return options;
+    }
+
+    // Method to perform currency conversion
+    public void convert() {
+        convertedAmount = CurrencyConverter.convertCurrency(fromCurrency, toCurrency, amount);
+        if (convertedAmount == null) {
+            showResult = false;
+        } else {
+            showResult = true;
+        }
+    }
+}

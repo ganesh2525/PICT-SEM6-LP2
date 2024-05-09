@@ -1,0 +1,12 @@
+public class GreatestAmongThreeNumbersController {
+    public Integer num1 { get; set; }
+    public Integer num2 { get; set; }
+    public Integer num3 { get; set; }
+    public Integer greatest { get; set; }
+    public Boolean showResult { get; set; }
+    
+    public void findGreatest() {
+        greatest = GreatestAmongThree.findGreatest(num1, num2, num3);
+        showResult = true;
+    }
+}
